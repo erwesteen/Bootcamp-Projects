@@ -1,0 +1,66 @@
+#!/bin/bash
+
+echo "my first bash script" >> ~/research/sys_info.txt
+date >> ~/research/sys_info.txt
+echo "Machine Type Info:" >> ~/research/sys_info.txt
+echo $MACHTYPE >> ~/research/sys_info.txt
+echo -e "Uname info: $(uname -a) \n" >> ~/research/sys_info.txt
+echo -e "IP Address: $(hostname -I) \n" >> ~/research/sys_info.txt
+echo "Hostname: $(hostname -s)" >> ~/research/sys_info.txt
+echo -e "\n777 Files:" >> ~/research/sys_info.txt
+find / -type f -perm 777 >> ~/research/sys_info.txt
+echo -e "\nTop 10 Processes:" >> ~/research/sys_info.txt
+ps aux -m | awk {'print $1, $2, $3, $4, $11'} | head >> ~/research/sys_info.txt
+
+
+
+#!/bin/bash
+
+free -h >> ~/backups/freemem/free_mem.txt
+df -h >> ~/backups/diskuse/disk_usage.txt
+lsof >> ~/backups/openlist/open_list.txt
+df -h >> ~/backups/freedisk/free_disk.txt
+
+#list of variables
+states=('MN' 'HI' 'CA' 'CO' 'AZ')
+
+#print out states
+for state in ${states[@]}
+do
+        if [ $state = 'HI' ]
+then
+        echo "Hawaii is the best!"
+else
+        echo "I am not fond of Hawaii"
+        fi
+Done
+
+
+#!/BIN/BASH
+
+cd /home/sysadmin/Documents/Lucky_Duck_Investigations/Dealer_Schedules_0310/
+grep "$1" * | grep $2 | awk '{if($3=="blackjack") print $3, $4; else if($4=="roulette") print $5, $6; else print $7, $8}'
+
+#!/bin/bash
+
+mkdir /var/backup
+
+tar cvf /var/backup/home.tar /home
+
+mv /var/backup/home.tar /var/backup/home.01242022.tar
+
+ls -lh /var/backup > /var/backup/file_report.txt
+
+free -h > /var/backup/disk_report.txt
+
+
+#!/bin/bash
+
+files=(
+        '/etc/passwd'
+        '/etc/shadow'
+)
+for file in ${files[@]}
+do
+        ls -l $file >> ~/Documents/files.txt
+done
