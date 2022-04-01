@@ -28,8 +28,7 @@ Load balancing ensures that the application will be highly responsive, in additi
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system metrics.
 
 
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 
 |  Name    |  Function  |  IP Address |  Operating System  |
 |----------|------------|-------------|--------------------|
@@ -89,9 +88,14 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the the IP address' of your Web VMs and ELK VM
 - Run the playbook, and navigate to http://[your.VM.IP]:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_ Config files that you copy to etc/ansible/filebeat-config.yml and etc/ansible/Metricbeat-config.yml
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? The config file and specify the IP address for the machine.
-- _Which URL do you navigate to in order to check that the ELK server is running? http://[your.VM.IP]:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Which file is the playbook? Where do you copy it?
+- Config files that you copy to etc/ansible/filebeat-config.yml and etc/ansible/Metricbeat-config.yml
+
+Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? 
+- The config file and specify the IP address for the machine.
+
+Which URL do you navigate to in order to check that the ELK server is running? 
+- http://[your.VM.IP]:5601/app/kibana
+
+
